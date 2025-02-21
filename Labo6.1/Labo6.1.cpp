@@ -3,51 +3,52 @@
 
 using namespace std;
 
-class Vehiculo {
+class Mascota {
 private:
-    string marca;
-    int año;
+    string nombre;
+    int edad;
 
 public:
-    Vehiculo(string marca, int año) {
-        marca = marca;
-        año = año;
+    Mascota(string _nombre, int _edad) {
+        nombre = _nombre;
+        edad = _edad;
     }
 
     void mostrarDatos() {
-        cout << "Marca: " << marca << ", Año: " << año << endl;
+        cout << "Nombre: " << nombre << ", Edad: " << edad << " años" << endl;
     }
 };
 
-class Carro : public Vehiculo {
+class Perro : public Mascota {
 private:
-    string combustible;
+    string raza;
 
 public:
-    Carro(string marca, int año, string _combustible)
-        : Vehiculo(marca, año) {
-        combustible = _combustible;
+    Perro(string _nombre, int _edad, string _raza)
+        : Mascota(_nombre, _edad) {
+        raza = _raza;
     }
 
-    void mostrarTipoCombustible() {
+    void mostrarRaza() {
         mostrarDatos();
-        cout << "Tipo de Combustible: " << combustible << endl;
+        cout << "Raza: " << raza << endl;
     }
 };
 
 int main() {
-    string marca, combustible;
-    int año;
+    string nombre, raza;
+    int edad;
 
-    cout << "Ingrese la marca del carro: ";
-    cin >> marca;
-    cout << "Ingrese el año del carro: ";
-    cin >> año;
-    cout << "Ingrese el tipo de combustible: ";
-    cin >> combustible;
+    cout << "Ingrese el nombre del perro: ";
+    cin >> nombre;
+    cout << "Ingrese la edad del perro: ";
+    cin >> edad;
+    cout << "Ingrese la raza del perro: ";
+    cin >> raza;
 
-    Carro miCarro(marca, año, combustible);
-    miCarro.mostrarTipoCombustible();
+    Perro miPerro(nombre, edad, raza);
+    miPerro.mostrarRaza();
+
 
     return 0;
 }
